@@ -4,23 +4,22 @@ import { useAppTheme } from "@/utils/useAppTheme"
 import FiberRuntime from "@/3D/react-three/fiber"
 import { Asset } from "expo-asset"
 import { Suspense, useEffect, useState } from "react"
-import { View } from "react-native"
+import { TextStyle, View } from "react-native"
 import { Text } from "@/components"
 import { Ball, ContactGround, Paddle, useGameStore } from "@/screens/MetalPong/Scene"
 import { Physics } from "@react-three/rapier"
 import { Font, FontLoader } from "three/examples/jsm/loaders/FontLoader"
 
 import fontJson from "../../../assets/fonts/gentilis_regular.typeface.json"
+import type { ThemedStyle } from "@/theme"
 
-const style = (welcome: boolean) =>
-  ({
-    color: "white",
-    display: welcome ? "block" : "none",
-    fontSize: "1.2em",
-    left: 50,
-    position: "absolute",
-    top: 50,
-  }) as const
+const $userInfo: ThemedStyle<TextStyle> = ({ colors }) => ({
+  color: colors.text,
+  backgroundColor: colors.tint,
+  position: "absolute",
+  top: 50,
+  left: 50,
+})
 
 export const StartGameScreen = observer(({ navigation }: NativeStackScreenProps<any>) => {
   const { themed } = useAppTheme()
@@ -86,7 +85,7 @@ export const StartGameScreen = observer(({ navigation }: NativeStackScreenProps<
           </Suspense>
         </Physics>
       </FiberRuntime.Canvas>
-      <div style={style(welcome)}>* click anywhere to start</div>
+      <Text style={themed($userInfo)}>Click anywhere to start...</Text>
     </>
   )
 })
