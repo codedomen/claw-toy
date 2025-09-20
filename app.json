@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "Claw Toy",
+    "slug": "claw-toy",
+    "scheme": "claw-toy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/images/app-icon-claw-toy.png",
+    "newArchEnabled": true,
+    "jsEngine": "hermes",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.clawtoy",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/app-icon-claw-toy-adaptive.png",
+        "backgroundColor": "#ffff00"
+      },
+      "allowBackup": false
+    },
+    "ios": {
+      "icon": "./assets/images/app-icon-claw-toy.png",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.clawtoy"
+    },
+    "web": {
+      "favicon": "./assets/images/app-icon-codedomen-favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-localization",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/app-icon-codedomen-splash.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffff00"
+        }
+      ]
+    ],
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "71314c3c-bab1-4f23-959a-c891e2798ffa"
+      }
+    }
+  }
+}
